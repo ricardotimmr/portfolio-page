@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: var(--color-grey);
+  font-family: "source-sans-3", Arial, sans-serif;
+  font-size: var(--m);
+  font-weight: var(--fw-regular);
+}
+
+header {
+  padding: var(--l);
+  background-color: var(--color-white);
+}
+
+footer {
+  max-width: 76.5rem;
+  margin: 0 auto;
+  background-color: var(--color-white);
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--fw-bold);
+}
+
+main {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+main>* {
+  padding: var(--m);
+}
+
+
+h1 {
+  font-size: var(--xl);
+}
+
+h2 {
+  margin: var(--xl) var(--s) var(--xl) var(--s);
+  font-size: var(--xl);
+}
+
+h3 {
+  font-size: var(--m);
+}
