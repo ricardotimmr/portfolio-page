@@ -1,0 +1,32 @@
+/* Define your variables here */
+
+:root {
+    /* Colors */
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+
+    /* Background Colors */
+    --primary-bg-color: #f8f9fa;
+    --secondary-bg-color: #e9ecef;
+    --success-bg-color: #d4edda;
+    --danger-bg-color: #f8d7da;
+    --warning-bg-color: #fff3cd;
+    --info-bg-color: #d1ecf1;
+
+    /* Font Size */
+    --font-size-small: 1rem;
+    --font-size-medium: 1.5rem;
+    --font-size-large: 2rem;
+
+    /* Font Weight */
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+
+}
+
+/* You can add more variables here */

@@ -4,14 +4,18 @@
 
 html,
 body {
-  background-color: var(--color-grey);
-  font-family: "source-sans-3", Arial, sans-serif;
+  background-color: var(--color-white);
+  font-family: "Roboto", Arial, sans-serif;
   font-size: var(--m);
   font-weight: var(--fw-regular);
 }
 
+body{
+  margin: 0 var(--xxl);
+}
+
 header {
-  padding: var(--l);
+  padding: 0 var(--l);
   background-color: var(--color-white);
 }
 
@@ -37,16 +41,11 @@ main {
 }
 
 main>* {
-  padding: var(--m);
+  padding: var(--m) 0;
 }
 
 
 h1 {
-  font-size: var(--xl);
-}
-
-h2 {
-  margin: var(--xl) var(--s) var(--xl) var(--s);
   font-size: var(--xl);
 }
 
