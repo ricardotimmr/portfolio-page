@@ -5,4 +5,4 @@
 @import url('components.css');
 @import url('fontstyles.css');
 
-@import url('./singlestyles/first-view.css');
+@import url('singlestyles/first-view.css');
