@@ -38,7 +38,7 @@ You can view the live demo of my portfolio here: [Portfolio Live Demo](https://y
 1. **Project Name**: Short description of the project.
    - **Tech Stack**: HTML, CSS, JavaScript, React, Node.js, MongoDB
    - **Link**: [GitHub Repository](https://github.com/yourusername/project-repo)
-   - **Live Demo**: [Live Demo Link](https://your-project-link.com)
+   - **Live Demo**: [Live Demo Link](https://ricardotimmr.github.io/portfolio-page/)
 
 2. **Project Name**: Short description of the project.
    - **Tech Stack**: Python, Django, PostgreSQL
