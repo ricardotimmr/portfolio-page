@@ -4,7 +4,8 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding: 1rem 2rem; */
+  padding: 10px 0;
+  margin-top: 40px;
 
   .displayname {
     display: flex;
@@ -23,6 +24,7 @@ nav {
         position: relative;
         bottom: 2px;
         font-size: var(--font-size-xxs);
+        transition: color 0.3s ease-in-out;
       }
 
       .displaynameTimm:hover {
@@ -39,6 +41,7 @@ nav {
       color: var(--color-dark-blue);
       font-size: var(--font-size-small);
       cursor: pointer;
+      transition: color 0.3s ease-in-out;
     }
 
     a:hover {
@@ -114,12 +117,14 @@ nav {
         font-size: var(--font-size-xxxs); /* Adjust the size of the 'Want to work with me' text */
         color: var(--color-action-color); /* Action color for the text */
         margin-right: 1rem; /* Space between text and icon */
+        transition: color 0.3s ease-in-out;
       }
   
       svg {
         color: var(--color-action-color); /* Apply action color to SVG stroke */
         width: 32px;
         height: 32px;
+        transition: color 0.3s ease-in-out;
       }
 
       &:hover {

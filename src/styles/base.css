@@ -13,7 +13,7 @@ body {
 
 body{
   margin: 0 var(--xxl);
-  padding: 30px;
+  padding: 0 75px;
 }
 
 header {
