@@ -4,14 +4,16 @@
 
 html,
 body {
-  background-color: var(--color-white);
-  font-family: "Roboto", Arial, sans-serif;
+  background-color: var(--color-eggshell);
+  font-family: "Sora", "Roboto", Arial, sans-serif;
   font-size: var(--m);
   font-weight: var(--fw-regular);
+  color: var(--color-dark-blue);
 }
 
 body{
   margin: 0 var(--xxl);
+  padding: 30px;
 }
 
 header {
@@ -36,7 +38,7 @@ h6 {
 }
 
 main {
-  max-width: 80rem;
+  /* max-width: 80rem; 
   margin: 0 auto;
 }
 

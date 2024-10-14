@@ -1,0 +1,49 @@
+ /* Font family and weight classes for Shrikhand */
+
+.shrikhand-regular {
+    font-family: "Shrikhand", serif;
+    font-weight: 400;
+    font-style: normal;
+  }  
+
+/* Font family and weight classes for Sora */
+
+.sora-thin {
+    font-family: "Sora", sans-serif;
+    font-weight: 100; /* Light */
+  }
+
+.sora-extraLight {
+    font-family: "Sora", sans-serif;
+    font-weight: 200; /* Light */
+  }
+
+  .sora-light {
+    font-family: "Sora", sans-serif;
+    font-weight: 300; /* Light */
+  }
+  
+  .sora-regular {
+    font-family: "Sora", sans-serif;
+    font-weight: 400; /* Regular */
+  }
+
+  .sora-medium {
+    font-family: "Sora", sans-serif;
+    font-weight: 500; /* Regular */
+  }
+
+  .sora-semiBold {
+    font-family: "Sora", sans-serif;
+    font-weight: 600; /* Regular */
+  }
+  
+  .sora-bold {
+    font-family: "Sora", sans-serif;
+    font-weight: 700; /* Bold */
+  }
+
+  .sora-extraBold {
+    font-family: "Sora", sans-serif;
+    font-weight: 800; /* Regular */
+  }
