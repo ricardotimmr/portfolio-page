@@ -1,0 +1,80 @@
+/* First View Container */
+.first-view-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    flex-direction: column;
+    background-color: var(--color-eggshell);
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* Animated Text Container */
+.animated-name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Individual Styling for Ricardo and Timm */
+#ricardo {
+    font-family: 'Sora', sans-serif;
+    color: var(--color-dark-blue);
+    font-size: 100px;
+}
+
+#timm {
+    font-family: 'Shrikhand', sans-serif;
+    color: var(--color-dark-blue);
+    margin-left: 5px;
+    font-size: 100px;
+    position: relative;
+    top: 5px;
+}
+
+/* Styling for Animating Each Letter */
+.animated-name p span {
+    display: inline-block;
+    transform: translateX(200px);
+    opacity: 0;
+    animation: slideIn 1.5s forwards;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/* Slide-in Animation for Each Letter */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Final Fade Out for the First View Container */
+.first-view-container.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+/* Make the rest of the page visible when the animation is done */
+body.show-main-content main,
+body.show-main-content header {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s ease-in;
+}
+
+main, header {
+    visibility: hidden;
+    opacity: 0;
+}

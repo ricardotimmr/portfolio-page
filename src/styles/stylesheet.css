@@ -4,3 +4,5 @@
 @import url('variables.css');
 @import url('components.css');
 @import url('fontstyles.css');
+
+@import url('/src/styles/singlestyles/first-view.css');
