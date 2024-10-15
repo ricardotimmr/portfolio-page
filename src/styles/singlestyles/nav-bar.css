@@ -1,3 +1,9 @@
+/* Placeholder for navbar to prevent layout jump */
+.navbar-placeholder {
+    height: 90px; /* Adjust this value to match your nav's initial height */
+    display: none; /* Initially hidden */
+}
+
 /* nav-bar */
 nav {
     display: flex;
@@ -6,6 +12,7 @@ nav {
     padding: 10px 0;
     margin-top: 40px;
     position: relative;
+    transition: padding 0.3s ease, margin-top 0.3s ease;
 
     /* Display name */
     .displayname {
@@ -58,7 +65,7 @@ nav {
         flex-direction: column;
         gap: 5px;
         position: absolute;
-        right: 20px; /* Align burger menu to the right */
+        right: 20px;
         top: 50%;
         transform: translateY(-50%);
         z-index: 3;
@@ -71,12 +78,10 @@ nav {
             transition: all 0.3s ease;
         }
 
-        /* Hover effect to change to action color */
         &:hover .line {
             background-color: var(--color-action-color);
         }
 
-        /* Keep action color when active (clicked) */
         &.active .line {
             background-color: var(--color-action-color);
         }
@@ -89,7 +94,6 @@ nav {
             transform: rotate(-30deg) translate(3px, -3px);
         }
 
-        /* Reverting the transformation when deactivating */
         &.inactive .line:nth-child(1),
         &.inactive .line:nth-child(2) {
             transform: none;
@@ -104,12 +108,11 @@ nav {
         left: 0;
         width: 100vw;
         height: 100vh;
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(0, 0, 0, 0.8);
         z-index: 1;
         transition: opacity 0.5s ease-in-out;
     }
 
-    /* Responsive styles for screen width <= 768px */
     @media (max-width: 768px) {
         .nav-elements {
             display: none;
@@ -130,14 +133,12 @@ nav {
             }
         }
 
-        /* Displayname on the far left */
         .displayname {
             position: relative;
             left: 0;
             transform: none;
         }
 
-        /* Show burger menu */
         .burger-menu {
             display: flex;
         }
@@ -155,15 +156,27 @@ nav {
     }
 }
 
-/* Slide down animation */
+/* Slide down animation for appearing */
 @keyframes slideDown {
     0% {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(-100%); /* Start from above the screen */
     }
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Slide up animation for disappearing */
+@keyframes slideUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100%); /* Slide back up above the screen */
     }
 }
 
@@ -175,4 +188,36 @@ nav {
     100% {
         opacity: 1;
     }
+}
+
+/* Sticky navbar with specific styling */
+.sticky {
+    position: fixed;
+    top: 10px; /* Small margin from the top */
+    left: 10px; /* Add some margin from the sides */
+    right: 10px;
+    width: calc(100% - 20px); /* Make it fit within the margins */
+    z-index: 999;
+    backdrop-filter: blur(10px); /* Apply blur effect */
+    background-color: rgba(201, 173, 167, 0.4); /* Semi-transparent background */
+    padding: 25px 20px; /* Maintain padding */
+    border-radius: 10px; /* Rounded corners */
+    animation: slideDown 0.5s ease-in-out forwards; /* Slide down effect */
+    transition: padding 0.3s ease, background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+/* Add the slide-up animation for disappearing */
+.sticky.hide {
+    animation: slideUp 0.5s ease-in-out forwards; /* Slide up effect */
+}
+
+.sticky .nav-elements {
+    gap: 15px; /* Adjust the gap between navigation items */
+}
+
+.sticky .burger-menu {
+    right: 10px; /* Adjust burger menu position */
+    top: 50%; /* Center it vertically in the sticky navbar */
+    transform: translateY(-50%);
+    /* Adjust the size if necessary */
 }
