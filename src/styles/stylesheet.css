@@ -5,4 +5,8 @@
 @import url('components.css');
 @import url('fontstyles.css');
 
+/* single styles files */
 @import url('singlestyles/first-view.css');
+
+/* files for sections on main page */
+@import url('singlestyles/about-me.css');
