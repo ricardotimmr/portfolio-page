@@ -31,14 +31,14 @@ Hi, I'm Ricardo Timm, a passionate web developer with experience in building mod
 
 ## 🌍 Live Demo
 
-You can view the live demo of my portfolio here: [Portfolio Live Demo](https://your-portfolio-link.com)
+You can view the live demo of my portfolio here: [Portfolio Live Demo](https://ricardotimmr.github.io/portfolio-page/)
 
 ## 📝 Projects Featured in the Portfolio
 
 1. **Project Name**: Short description of the project.
    - **Tech Stack**: HTML, CSS, JavaScript, React, Node.js, MongoDB
    - **Link**: [GitHub Repository](https://github.com/yourusername/project-repo)
-   - **Live Demo**: [Live Demo Link](https://ricardotimmr.github.io/portfolio-page/)
+   - **Live Demo**: [Live Demo Link](https://your-project-link.com)
 
 2. **Project Name**: Short description of the project.
    - **Tech Stack**: Python, Django, PostgreSQL
