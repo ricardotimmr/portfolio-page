@@ -9,4 +9,6 @@
 @import url('singlestyles/first-view.css');
 
 /* files for sections on main page */
+@import url('singlestyles/nav-bar.css');
 @import url('singlestyles/about-me.css');
+@import url('singlestyles/hero-section.css');
