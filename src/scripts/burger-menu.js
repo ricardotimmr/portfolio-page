@@ -7,6 +7,7 @@ const navbarPlaceholder = document.querySelector('.navbar-placeholder'); // Sele
 const stickyScrollThreshold = 200; // Adjust this as needed
 
 let lastScrollTop = 0;
+let isFirstViewComplete = false; // Track when the first-view animation is complete
 
 // Copy navbar content for the sticky navbar
 stickyNavbar.innerHTML = navbar.innerHTML;
@@ -33,6 +34,9 @@ stickyNavbar.querySelector('.burger-menu').addEventListener('click', () => {
 
 // Function to handle the sticky navbar behavior with animation
 function handleStickyNavbar() {
+    // Only check if first-view animation has completed
+    if (!isFirstViewComplete) return;
+
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     if (scrollTop > stickyScrollThreshold && !stickyNavbar.classList.contains("visible")) {
@@ -47,6 +51,11 @@ function handleStickyNavbar() {
 
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 }
+
+// Delay the sticky navbar behavior until the first-view animation is complete
+setTimeout(() => {
+    isFirstViewComplete = true; // Allow sticky navbar to appear after this
+}, 4000); // Adjust this to match the duration of the first-view animation (4 seconds in your example)
 
 // Run the function when the page is scrolled
 window.onscroll = function () {

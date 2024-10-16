@@ -1,6 +1,7 @@
 /* About Me Section */
 .about-me-section {
     margin-top: 200px;
+    margin-bottom: 200px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
