@@ -13,79 +13,81 @@
     transform: translateY(100%); /* Start the section off-screen */
     transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* Smooth slide up */
     width: 100vw; /* Full viewport width */
-    z-index: 9999; /* Make sure it's on top of all content */
-}
+    z-index: 9999; /* Ensure it stays on top */
 
-/* Contact section elements */
-.contact-section .contact-content {
-    text-align: center;
-    color: white;
-    opacity: 0; /* Initially hidden */
-    transform: translateY(50px); /* Start slightly below */
-    transition: transform 1s ease-in-out 0.5s, opacity 1s ease-in-out 0.5s; /* Delayed animation */
-    width: 80%; /* Center the content with some margin on the sides */
-    max-width: 1200px; /* Ensure it doesn't get too wide */
-}
+    /* Active class to trigger the animations */
+    &.visible {
+        opacity: 1;
+        transform: translateY(0); /* Move the section into view */
+    }
 
-/* Style the call-to-action list */
-.contact-section ul {
-    list-style: none; /* Remove default bullet points */
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column; /* Arrange items vertically */
-    justify-content: center;
-    align-items: center;
-    gap: 15px; /* Reduce space between items */
-}
+    .contact-content {
+        text-align: center;
+        color: white;
+        opacity: 0; /* Initially hidden */
+        transform: translateY(50px); /* Start slightly below */
+        transition: transform 1s ease-in-out 0.5s, opacity 1s ease-in-out 0.5s; /* Delayed animation */
+        width: 80%; /* Center the content with some margin on the sides */
+        max-width: 1200px; /* Ensure it doesn't get too wide */
 
-.contact-section li {
-    width: 50%; /* Make each list item take full width */
-    cursor: pointer;
-}
+        /* When the contact section is visible */
+        .contact-section.visible & {
+            opacity: 1;
+            transform: translateY(0); /* Bring elements into view */
+        }
+    }
 
-.contact-section .call-to-action {
-    display: flex;
-    justify-content: space-between; /* Align text left and icon right */
-    align-items: center;
-    padding: 20px 30px;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-    font-size: 2.4rem; /* Larger font size */
-    color: white;
-}
+    /* Call-to-action styling */
+    ul {
+        list-style: none; /* Remove default bullet points */
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column; /* Arrange items vertically */
+        justify-content: center;
+        align-items: center;
+        gap: 15px; /* Reduce space between items */
+    }
 
-.contact-section .call-to-action:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Change background on hover */
-}
+    li {
+        width: 50%; /* Make each list item take full width */
+        cursor: pointer;
+    }
 
-.contact-section .call-to-action p {
-    margin: 0;
-    font-size: 3.6rem; /* Increase font size */
-    font-weight: bold; /* Make the text stand out */
-}
+    .call-to-action {
+        display: flex;
+        justify-content: space-between; /* Align text left and icon right */
+        align-items: center;
+        padding: 20px 30px;
+        border-radius: 10px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        font-size: 2.4rem; /* Larger font size */
+        color: white;
 
-.contact-section .call-to-action svg {
-    width: 50px;
-    height: 50px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-    margin-left: 10px; /* Reduce space between the text and arrow */
-    transition: transform 0.3s ease;
-}
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Change background on hover */
 
-.contact-section .call-to-action:hover svg {
-    transform: translateX(5px); /* Slight movement to the right on hover */
-}
+            p, svg {
+                transform: translateX(5px); /* Apply same movement for both text and icon */
+                color: var(--hover-color); /* Optional color change for hover */
+            }
+        }
 
-/* Active class to trigger the animations */
-.contact-section.visible {
-    opacity: 1;
-    transform: translateY(0); /* Move the section into view */
-}
+        p {
+            margin: 0;
+            font-size: 3.6rem; /* Increase font size */
+            font-weight: bold; /* Make the text stand out */
+            transition: transform 0.3s ease;
+        }
 
-.contact-section.visible .contact-content {
-    opacity: 1;
-    transform: translateY(0); /* Bring elements into view */
+        svg {
+            width: 50px;
+            height: 50px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 2;
+            margin-left: 10px; /* Reduce space between the text and arrow */
+            transition: transform 0.3s ease;
+        }
+    }
 }

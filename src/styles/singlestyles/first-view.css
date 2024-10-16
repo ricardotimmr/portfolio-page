@@ -11,39 +11,48 @@
     position: fixed;
     top: 0;
     left: 0;
-}
 
-/* Animated Text Container */
-.animated-name {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
+    &.fade-out {
+        opacity: 0;
+        transition: opacity 1s ease-out;
+        pointer-events: none;
+        visibility: hidden;
+    }
 
-/* Individual Styling for Ricardo and Timm */
-#ricardo {
-    font-family: 'Sora', sans-serif;
-    color: var(--color-dark-blue);
-    font-size: 100px;
-}
+    /* Animated Text Container */
+    .animated-name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
 
-#timm {
-    font-family: 'Shrikhand', sans-serif;
-    color: var(--color-dark-blue);
-    margin-left: 5px;
-    font-size: 100px;
-    position: relative;
-    top: 5px;
-}
+        /* Styling for Animating Each Letter */
+        p {
+            span {
+                display: inline-block;
+                transform: translateX(200px);
+                opacity: 0;
+                animation: slideIn 1.5s forwards;
+                transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+        }
+    }
 
-/* Styling for Animating Each Letter */
-.animated-name p span {
-    display: inline-block;
-    transform: translateX(200px);
-    opacity: 0;
-    animation: slideIn 1.5s forwards;
-    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    /* Individual Styling for Ricardo and Timm */
+    #ricardo {
+        font-family: 'Sora', sans-serif;
+        color: var(--color-dark-blue);
+        font-size: 100px;
+    }
+
+    #timm {
+        font-family: 'Shrikhand', sans-serif;
+        color: var(--color-dark-blue);
+        margin-left: 5px;
+        font-size: 100px;
+        position: relative;
+        top: 5px;
+    }
 }
 
 /* Slide-in Animation for Each Letter */
@@ -58,23 +67,18 @@
     }
 }
 
-/* Final Fade Out for the First View Container */
-.first-view-container.fade-out {
-    opacity: 0;
-    transition: opacity 1s ease-out;
-    pointer-events: none;
-    visibility: hidden;
-}
+/* Main Content and Header Visibility after Animation */
+body {
+    &.show-main-content {
+        main, header {
+            visibility: visible;
+            opacity: 1;
+            transition: opacity 1s ease-in;
+        }
+    }
 
-/* Make the rest of the page visible when the animation is done */
-body.show-main-content main,
-body.show-main-content header {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 1s ease-in;
-}
-
-main, header {
-    visibility: hidden;
-    opacity: 0;
+    main, header {
+        visibility: hidden;
+        opacity: 0;
+    }
 }
