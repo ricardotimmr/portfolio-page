@@ -1,36 +1,48 @@
 const burgerMenu = document.querySelector('.burger-menu');
 const navElements = document.querySelector('.nav-elements');
 const dropdownBackground = document.querySelector('.dropdown-background');
+const stickyNavbar = document.createElement('nav'); // Create a separate sticky navbar
 const navbar = document.querySelector('nav');
 const navbarPlaceholder = document.querySelector('.navbar-placeholder'); // Select the placeholder
 const stickyScrollThreshold = 200; // Adjust this as needed
+
 let lastScrollTop = 0;
 
-// Toggle burger menu and dropdown
+// Copy navbar content for the sticky navbar
+stickyNavbar.innerHTML = navbar.innerHTML;
+stickyNavbar.classList.add('sticky', 'hide');
+document.body.appendChild(stickyNavbar);
+
+// Toggle burger menu and dropdown for both regular and sticky navbars
+function toggleBurgerMenu(menu, elements, background) {
+    menu.classList.toggle('active');
+    elements.classList.toggle('active');
+    background.classList.toggle('active');
+}
+
 burgerMenu.addEventListener('click', () => {
-    burgerMenu.classList.toggle('active');
-    navElements.classList.toggle('active');
-    dropdownBackground.classList.toggle('active');
+    toggleBurgerMenu(burgerMenu, navElements, dropdownBackground);
+});
+
+stickyNavbar.querySelector('.burger-menu').addEventListener('click', () => {
+    const stickyBurgerMenu = stickyNavbar.querySelector('.burger-menu');
+    const stickyNavElements = stickyNavbar.querySelector('.nav-elements');
+    const stickyDropdownBackground = stickyNavbar.querySelector('.dropdown-background');
+    toggleBurgerMenu(stickyBurgerMenu, stickyNavElements, stickyDropdownBackground);
 });
 
 // Function to handle the sticky navbar behavior with animation
-function stickyNavbar() {
+function handleStickyNavbar() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    // Only show sticky navbar when scrolling down past the threshold and it's not already sticky
-    if (scrollTop > stickyScrollThreshold && !navbar.classList.contains("sticky")) {
-        navbar.classList.add("sticky");
-        navbar.classList.remove("hide"); // Remove hide to ensure it's visible
-        navbarPlaceholder.style.display = "block"; // Show the placeholder to prevent jump
-    }
-
-    // Hide the sticky navbar only when scrolling back to the top, and it's currently sticky
-    else if (scrollTop <= stickyScrollThreshold && navbar.classList.contains("sticky")) {
-        navbar.classList.add("hide"); // Apply the slide-up hide animation
+    if (scrollTop > stickyScrollThreshold && !stickyNavbar.classList.contains("visible")) {
+        stickyNavbar.classList.add("visible");
+        stickyNavbar.classList.remove("hide"); // Show the sticky navbar
+    } else if (scrollTop <= stickyScrollThreshold && stickyNavbar.classList.contains("visible")) {
+        stickyNavbar.classList.add("hide"); // Trigger the slide-up animation
         setTimeout(() => {
-            navbar.classList.remove("sticky", "hide"); // Remove both classes after the animation
-            navbarPlaceholder.style.display = "none"; // Hide the placeholder when not sticky
-        }, 500); // Match the animation duration (0.5s)
+            stickyNavbar.classList.remove("visible"); // Remove visibility only after animation ends
+        }, 500); // Match the animation duration
     }
 
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
@@ -38,5 +50,5 @@ function stickyNavbar() {
 
 // Run the function when the page is scrolled
 window.onscroll = function () {
-    stickyNavbar();
+    handleStickyNavbar();
 };

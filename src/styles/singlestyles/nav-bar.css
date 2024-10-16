@@ -190,34 +190,43 @@ nav {
     }
 }
 
-/* Sticky navbar with specific styling */
+/* Sticky navbar */
 .sticky {
     position: fixed;
-    top: 10px; /* Small margin from the top */
-    left: 10px; /* Add some margin from the sides */
-    right: 10px;
-    width: calc(100% - 20px); /* Make it fit within the margins */
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    width: 95%; /* Adjust the width to be smaller */
     z-index: 999;
-    backdrop-filter: blur(10px); /* Apply blur effect */
+    backdrop-filter: blur(10px);
     background-color: rgba(201, 173, 167, 0.4); /* Semi-transparent background */
-    padding: 25px 20px; /* Maintain padding */
-    border-radius: 10px; /* Rounded corners */
-    animation: slideDown 0.5s ease-in-out forwards; /* Slide down effect */
-    transition: padding 0.3s ease, background-color 0.3s ease, backdrop-filter 0.3s ease;
-}
+    padding: 25px 30px;
+    border-radius: 10px;
+    transition: padding 0.3s ease, background-color 0.3s ease, backdrop-filter 0.3s ease, opacity 0.5s ease, transform 0.5s ease;
+    opacity: 0;
+    transform: translate(-50%, -100%); /* Move off the screen when hidden */
 
-/* Add the slide-up animation for disappearing */
-.sticky.hide {
-    animation: slideUp 0.5s ease-in-out forwards; /* Slide up effect */
-}
+    /* When the sticky navbar is visible */
+    &.visible {
+        opacity: 1;
+        transform: translateX(-50%); /* Slide down to visible position */
+    }
 
-.sticky .nav-elements {
-    gap: 15px; /* Adjust the gap between navigation items */
-}
+    /* When the sticky navbar is hiding */
+    &.hide {
+        opacity: 0;
+        transform: translate(-50%, -100%); /* Slide up out of view */
+    }
 
-.sticky .burger-menu {
-    right: 10px; /* Adjust burger menu position */
-    top: 50%; /* Center it vertically in the sticky navbar */
-    transform: translateY(-50%);
-    /* Adjust the size if necessary */
+    /* Navigation elements */
+    .nav-elements {
+        gap: 30px;
+    }
+
+    /* Burger menu */
+    .burger-menu {
+        right: 60px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }
