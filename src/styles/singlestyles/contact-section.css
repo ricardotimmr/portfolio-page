@@ -54,6 +54,10 @@
                 bottom: 2px;
                 font-size: var(--font-size-xxs);
                 transition: color 0.3s ease-in-out;
+
+                &:hover {
+                    color: var(--color-dark-blue);
+                }
             }
         }
 
@@ -68,6 +72,10 @@
                 font-size: var(--font-size-small);
                 cursor: pointer;
                 transition: color 0.3s ease-in-out;
+
+                &:hover {
+                    color: var(--color-dark-blue);
+                }
             }
         }
 
@@ -185,7 +193,7 @@
     .contact-tagline {
         position: absolute;
         bottom: 100px;
-        left: 65%;
+        left: 74%;
         transform: translateX(-50%);
         display: flex;
         align-items: center;
@@ -193,15 +201,20 @@
         font-size: var(--font-size-small);
         font-weight: var(--font-weight-light);
         gap: 10px;
+        
+        p {
+            margin: 0; /* Ensures there's no extra margin on the text */
+            white-space: nowrap; /* Prevents the text from wrapping */
+        }
     
-        /* Line styling */
-        .line {
+        hr {
             flex-grow: 1;
-            height: 2px; /* Increase height for better visibility */
-            max-width: 150px; /* Optional: set a max width for better control */
-            background-color: var(--color-eggshell); /* Ensure color contrasts with background */
-            opacity: 0.9; /* Optional: increase visibility with opacity */
-            margin-left: 10px;
+            height: 2px; /* Adjust thickness for better visibility */
+            width: 500px; /* Adjust the width as needed */
+            background-color: var(--color-eggshell); /* Match the text color */
+            border: none; /* Remove default border */
+            opacity: 0.9; /* Enhance visibility */
+            margin: 0; /* Remove extra spacing */
         }
     }
 
