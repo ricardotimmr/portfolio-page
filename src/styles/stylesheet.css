@@ -7,7 +7,6 @@
 
 /* single styles files */
 @import url('singlestyles/first-view.css');
-@import url('singlestyles/white-nav-bar.css');
 
 /* files for sections on main page */
 @import url('singlestyles/nav-bar.css');

@@ -1,93 +1,284 @@
 /* Contact Section */
 .contact-section {
-    position: fixed; /* Overlay the contact section on the page */
+    position: fixed;
     top: 0;
     left: 0;
-    height: 100vh; /* Full viewport height */
-    background-color: var(--color-action-color); /* Action color background */
-    overflow: hidden; /* Hide content during animation */
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--color-action-color);
+    overflow: hidden;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transform: translateY(100%); /* Start the section off-screen */
-    transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* Smooth slide up */
-    width: 100vw; /* Full viewport width */
-    z-index: 9999; /* Ensure it stays on top */
+    transform: translateY(100%);
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+    z-index: 9999;
 
     /* Active class to trigger the animations */
     &.visible {
         opacity: 1;
-        transform: translateY(0); /* Move the section into view */
+        transform: translateY(0);
+    }
+
+    /* Navbar at the top */
+    .contact-navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+
+        .contact-displayname {
+            display: flex;
+            font-size: var(--font-size-medium);
+            font-weight: var(--font-weight-bold);
+            cursor: pointer;
+            color: var(--color-eggshell);
+            margin-left: 20px;
+
+            p {
+                color: var(--color-eggshell);
+                margin-right: 1px;
+                font-size: var(--font-size-xxxs);
+            }
+
+            .contact-displaynameTimm {
+                color: var(--color-eggshell);
+                position: relative;
+                bottom: 2px;
+                font-size: var(--font-size-xxs);
+                transition: color 0.3s ease-in-out;
+            }
+        }
+
+        .contact-nav-elements {
+            display: flex;
+            gap: 30px;
+            margin-right: 20px;
+
+            a {
+                text-decoration: none;
+                color: var(--color-eggshell);
+                font-size: var(--font-size-small);
+                cursor: pointer;
+                transition: color 0.3s ease-in-out;
+            }
+        }
+
+        .contact-burger-menu {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 3;
+
+            .contact-line {
+                width: 30px;
+                height: 3px;
+                background-color: var(--color-dark-blue);
+                border-radius: 50px;
+                transition: all 0.3s ease;
+            }
+
+            &:hover .contact-line {
+                background-color: var(--color-action-color);
+            }
+
+            &.active .contact-line {
+                background-color: var(--color-action-color);
+
+                &:nth-child(1) {
+                    transform: rotate(30deg) translate(3px, 3px);
+                }
+
+                &:nth-child(2) {
+                    transform: rotate(-30deg) translate(3px, -3px);
+                }
+            }
+
+            &.inactive .contact-line:nth-child(1),
+            &.inactive .contact-line:nth-child(2) {
+                transform: none;
+            }
+        }
     }
 
     .contact-content {
         text-align: center;
         color: white;
-        opacity: 0; /* Initially hidden */
-        transform: translateY(50px); /* Start slightly below */
-        transition: transform 1s ease-in-out 0.5s, opacity 1s ease-in-out 0.5s; /* Delayed animation */
-        width: 80%; /* Center the content with some margin on the sides */
-        max-width: 1200px; /* Ensure it doesn't get too wide */
+        opacity: 0;
+        transform: translateY(50px);
+        transition: transform 1s ease-in-out 0.5s, opacity 1s ease-in-out 0.5s;
+        width: 80%;
+        max-width: 1200px;
 
         /* When the contact section is visible */
         .contact-section.visible & {
             opacity: 1;
-            transform: translateY(0); /* Bring elements into view */
+            transform: translateY(0);
         }
-    }
 
-    /* Call-to-action styling */
-    ul {
-        list-style: none; /* Remove default bullet points */
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column; /* Arrange items vertically */
-        justify-content: center;
-        align-items: center;
-        gap: 15px; /* Reduce space between items */
-    }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
 
-    li {
-        width: 50%; /* Make each list item take full width */
-        cursor: pointer;
-    }
-
-    .call-to-action {
-        display: flex;
-        justify-content: space-between; /* Align text left and icon right */
-        align-items: center;
-        padding: 20px 30px;
-        border-radius: 10px;
-        transition: background-color 0.3s ease, color 0.3s ease;
-        font-size: 2.4rem; /* Larger font size */
-        color: white;
-
-        &:hover {
-            background-color: rgba(255, 255, 255, 0.2); /* Change background on hover */
-
-            p, svg {
-                transform: translateX(5px); /* Apply same movement for both text and icon */
-                color: var(--hover-color); /* Optional color change for hover */
+            li {
+                width: 50%;
+                cursor: pointer;
             }
         }
 
-        p {
-            margin: 0;
-            font-size: 3.6rem; /* Increase font size */
-            font-weight: bold; /* Make the text stand out */
-            transition: transform 0.3s ease;
+        .call-to-action {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            border-radius: 10px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-size: 2.4rem;
+            color: white;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.2);
+
+                p, svg {
+                    transform: translateX(5px);
+                    color: var(--hover-color);
+                }
+            }
+
+            p {
+                margin: 0;
+                font-size: 3.6rem;
+                font-weight: bold;
+                transition: transform 0.3s ease;
+            }
+
+            svg {
+                width: 50px;
+                height: 50px;
+                fill: none;
+                stroke: currentColor;
+                stroke-width: 2;
+                margin-left: 10px;
+                transition: transform 0.3s ease;
+            }
+        }
+    }
+
+    .contact-tagline {
+        position: absolute;
+        bottom: 100px;
+        left: 65%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        color: var(--color-eggshell);
+        font-size: var(--font-size-small);
+        font-weight: var(--font-weight-light);
+        gap: 10px;
+    
+        /* Line styling */
+        .line {
+            flex-grow: 1;
+            height: 2px; /* Increase height for better visibility */
+            max-width: 150px; /* Optional: set a max width for better control */
+            background-color: var(--color-eggshell); /* Ensure color contrasts with background */
+            opacity: 0.9; /* Optional: increase visibility with opacity */
+            margin-left: 10px;
+        }
+    }
+
+    /* Mobile Contact Navbar Elements */
+    @media (max-width: 768px) {
+        .contact-nav-elements {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: transparent;
+            padding: 20px;
+            z-index: 2;
+            gap: 20px;
+
+            a {
+                color: white;
+                font-size: 2rem;
+                text-align: center;
+            }
         }
 
-        svg {
-            width: 50px;
-            height: 50px;
-            fill: none;
-            stroke: currentColor;
-            stroke-width: 2;
-            margin-left: 10px; /* Reduce space between the text and arrow */
-            transition: transform 0.3s ease;
+        .contact-displayname {
+            position: relative;
+            left: 0;
+            transform: none;
         }
+
+        .contact-burger-menu {
+            display: flex;
+        }
+
+        .contact-burger-menu.active + .contact-dropdown-background {
+            display: block;
+            opacity: 1;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .contact-burger-menu.active + .contact-dropdown-background + .contact-nav-elements {
+            display: flex;
+            animation: slideDown 0.5s ease-in-out forwards;
+        }
+    }
+
+    /* Contact Dropdown Background */
+    .contact-dropdown-background {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 1;
+        transition: opacity 0.5s ease-in-out;
+    }
+}
+
+/* Animations for dropdown */
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }
