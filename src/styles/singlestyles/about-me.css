@@ -5,7 +5,6 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    background-color: var(--color-eggshell);
     position: relative; /* For proper positioning of absolute elements */
 
     .about-me-text {

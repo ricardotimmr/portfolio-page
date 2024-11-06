@@ -149,6 +149,10 @@
             li {
                 width: 50%;
                 cursor: pointer;
+
+                a {
+                    text-decoration: none;
+                }
             }
         }
 
