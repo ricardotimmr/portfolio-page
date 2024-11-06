@@ -9,6 +9,10 @@
     --color-eggshell: #F2E9E4;
     --color-action-color: #E14B3F;
 
+    /* Possibel Backround Colors */
+
+    --color-offwhite: #f2f0ef;
+
     /* Font Size */
     --font-size-xxl: 170px; /* Extra-extra-large */
     --font-size-xl: 125px;  /* Extra-large */
