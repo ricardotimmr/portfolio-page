@@ -36,7 +36,7 @@ const resistanceDuration = 0.2;  // Duration of the bump animation
 
 // ScrollTrigger for the main animation of the contact section
 ScrollTrigger.create({
-  trigger: ,
+  trigger: projectSection,
   start: 'bottom+=100 bottom', // Allow user to scroll 100px past the end of about-me
   end: 'bottom+=300 bottom', // Add 200px buffer for resistance
   onEnter: () => contactTimeline.play(), // Play the contact section animation
@@ -47,7 +47,7 @@ ScrollTrigger.create({
 
 // Apply the resistance effect when scrolling near the trigger
 ScrollTrigger.create({
-  trigger: ,
+  trigger: projectSection,
   start: 'bottom+=100 bottom', // Resistance starts 100px after about-me section ends
   end: 'bottom+=200 bottom', // End resistance effect after 100px
   onEnter: () => {
