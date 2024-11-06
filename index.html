@@ -1,203 +1,350 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
-    <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Ricardo Timm Portfolio</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="src/styles/stylesheet.css">
+    <link rel="stylesheet" href="src/styles/stylesheet.css" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+  </head>
 
-    </head>
+  <body>
+    <div class="first-view-container">
+      <div class="animated-name">
+        <p class="sora-light" id="ricardo">Ricardo</p>
+        <p class="shrikhand-regular" id="timm">Timm</p>
+      </div>
+    </div>
 
-    <body>
+    <header>
+      <div class="navbar-placeholder"></div>
 
-        <div class="first-view-container">
-            <div class="animated-name">
-                <p class="sora-light" id="ricardo">Ricardo</p>
-                <p class="shrikhand-regular" id="timm">Timm</p>
-            </div>
+      <nav>
+        <div class="displayname">
+          <p class="sora-light">Ricardo</p>
+          <p class="shrikhand-regular displaynameTimm">Timm</p>
         </div>
-        
-        <header>
 
-          <div class="navbar-placeholder"></div>
+        <div class="burger-menu">
+          <div class="line"></div>
+          <div class="line"></div>
+        </div>
 
-            <nav>
+        <div class="dropdown-background"></div>
 
-                <div class="displayname">
-                    <p class="sora-light">Ricardo</p>
-                    <p class="shrikhand-regular displaynameTimm">Timm</p>
-                </div>
+        <ul class="nav-elements sora-light">
+          <li><a href="#projects">projects</a></li>
+          <li><a href="#about">about</a></li>
+          <li><a href="#contact">contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-                <div class="burger-menu">
-                  <div class="line"></div>
-                  <div class="line"></div>
-                </div>
+    <main>
+      <section class="hero-section">
+        <div class="hero-main-text">
+          <div class="hero-upper">
+            <p class="sora-regular">I do</p>
+            <h1 class="sora-regular">Web Development</h1>
+          </div>
 
-                <div class="dropdown-background"></div>
+          <div class="hero-lower">
+            <p class="sora-regular">And create</p>
+            <h1 class="sora-regular">UX-/UI Designs</h1>
+          </div>
+        </div>
 
-                <ul class="nav-elements sora-light">
-                    <li><a href="#projects">projects</a></li>
-                    <li><a href="#about">about</a></li>
-                    <li><a href="#contact">contact</a></li>
-                </ul>
+        <hr />
 
-            </nav>
+        <div>
+          <p class="sora-extraLight">
+            Hi I'm Ricardo, a passionate web developer with knowledge in creating <br />responsive,
+            user-friendly web applications. I love turning complex <br />problems into simple,
+            beautiful solutions. My goal is to <br />create scalable, maintainable software for you
+            <br />that offers great user experiences.
+          </p>
 
-        </header>
+          <div class="call-to-action">
+            <p class="sora-regular">Want to work with me?</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              fill="none"
+            >
+              <path
+                d="M16.5 7.5L6 18"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M8 6.18791C8 6.18791 16.0479 5.50949 17.2692 6.73079C18.4906 7.95209 17.812 16 17.812 16"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+        </div>
+      </section>
 
-        <main>
+      <section class="about-me-section">
+        <div class="about-me-text">
+          <h1 class="sora-regular">About me</h1>
+          <hr />
+          <p class="sora-light">
+            Currently a 23-year-old student pursuing a degree in Medieninformatik with a strong
+            passion for web development and creating seamless digital experiences. While my
+            professional experience comes from personal projects, I’ve spent countless hours
+            developing my skills in front-end and back-end technologies, continuously learning and
+            growing as a developer.
+          </p>
+          <p class="sora-light">
+            Outside the world of code, endurance sports play a big role in maintaining discipline
+            and focus. The same persistence and drive that come from long-distance running and
+            cycling translate into tackling complex development challenges and continuously
+            improving.
+          </p>
+          <p class="sora-light">
+            I’m always eager to learn new things, tackle complex problems, and contribute to
+            innovative projects.
+          </p>
+          <div class="call-to-action">
+            <p class="sora-regular">Looking for my resume?</p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+              fill="none"
+            >
+              <path
+                d="M16.5 7.5L6 18"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M8 6.18791C8 6.18791 16.0479 5.50949 17.2692 6.73079C18.4906 7.95209 17.812 16 17.812 16"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+        </div>
 
-            <section class="hero-section">
+        <div class="about-me-image">
+          <img src="public/assets/images/personalpicSW.jpg" alt="About me picture - BW" />
+        </div>
+      </section>
 
-                <div class="hero-main-text">
-                  <div class="hero-upper">
-                    <p class="sora-regular">I do</p>
-                    <h1 class="sora-regular">Web Development</h1>
-                  </div>
-              
-                  <div class="hero-lower">
-                    <p class="sora-regular">And create</p>
-                    <h1 class="sora-regular">UX-/UI Designs</h1>
-                  </div>
-                </div>
-              
-                <hr>
-              
-                <div>
-                  <p class="sora-extraLight">
-                    Hi I'm Ricardo, a passionate web developer with knowledge in creating <br>responsive, user-friendly web applications. 
-                    I love turning complex <br>problems into simple, beautiful solutions. My goal is to <br>create scalable, maintainable 
-                    software for you <br>that offers great user experiences.
-                  </p>
-              
-                  <div class="call-to-action">
-                    <p class="sora-regular">Want to work with me?</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none">
-                      <path d="M16.5 7.5L6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                      <path d="M8 6.18791C8 6.18791 16.0479 5.50949 17.2692 6.73079C18.4906 7.95209 17.812 16 17.812 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                  </div>
-                  
-                </div>
-              
-              </section>
-
-              <section class="about-me-section">
-                <div class="about-me-text">
-                    <h1 class="sora-regular">About me</h1>
-                    <hr>
-                    <p class="sora-light">
-                        Currently a 23-year-old student pursuing a degree in Medieninformatik with a strong passion for web development and creating seamless digital experiences. While my professional experience comes from personal projects, I’ve spent countless hours developing my skills in front-end and back-end technologies, continuously learning and growing as a developer.
-                    </p>
-                    <p class="sora-light">
-                        Outside the world of code, endurance sports play a big role in maintaining discipline and focus. The same persistence and drive that come from long-distance running and cycling translate into tackling complex development challenges and continuously improving.
-                    </p>
-                    <p class="sora-light">
-                        I’m always eager to learn new things, tackle complex problems, and contribute to innovative projects.
-                    </p>
-                    <div class="call-to-action">
-                        <p class="sora-regular">Looking for my resume?</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none">
-                            <path d="M16.5 7.5L6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                            <path d="M8 6.18791C8 6.18791 16.0479 5.50949 17.2692 6.73079C18.4906 7.95209 17.812 16 17.812 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </div>
-                </div>
-            
-                <div class="about-me-image">
-                    <img src="public/assets/images/personalpicSW.jpg" alt="About me picture - BW">
-                </div>
-            </section>
-
-            <section class="contact-section">
-
-              <nav class="contact-navbar">
-                <div class="contact-displayname">
-                    <p class="sora-light">Ricardo</p>
-                    <p class="shrikhand-regular contact-displaynameTimm">Timm</p>
-                </div>
-        
-                <ul class="contact-nav-elements sora-light">
-                    <li><a href="#projects">projects</a></li>
-                    <li><a href="#about">about</a></li>
-                    <li><a href="#contact">contact</a></li>
-                </ul>
-        
-                <div class="contact-burger-menu">
-                    <div class="contact-line"></div>
-                    <div class="contact-line"></div>
-                </div>
-                <div class="contact-dropdown-background"></div>
-            </nav>
-            
-              <div class="contact-content">
-                  <ul>
-                    <li><div class="call-to-action">
-                        <p class="sora-medium">Contact.</p>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none">
-                          <path d="M16.5 7.5L6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                          <path d="M8 6.18791C8 6.18791 16.0479 5.50949 17.2692 6.73079C18.4906 7.95209 17.812 16 17.812 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                      </svg>
-                      </div>
-                    </li>
-                    <li><div class="call-to-action">
-                      <p class="sora-medium">Instagram.</p>
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none">
-                        <path d="M16.5 7.5L6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                        <path d="M8 6.18791C8 6.18791 16.0479 5.50949 17.2692 6.73079C18.4906 7.95209 17.812 16 17.812 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                    </div>
-                  </li>
-                  <li><div class="call-to-action">
-                    <p class="sora-medium">GitHub.</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none">
-                      <path d="M16.5 7.5L6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                      <path d="M8 6.18791C8 6.18791 16.0479 5.50949 17.2692 6.73079C18.4906 7.95209 17.812 16 17.812 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                  </div>
-                </li>
-                <li><div class="call-to-action">
-                  <p class="sora-medium">LinkedIn.</p>
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="none">
-                    <path d="M16.5 7.5L6 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                    <path d="M8 6.18791C8 6.18791 16.0479 5.50949 17.2692 6.73079C18.4906 7.95209 17.812 16 17.812 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                </div>
-              </li>
-                  </ul>
-              </div>
-              <div class="contact-tagline">
-                <p>Let’s make your project real</p>
-                <hr>
+      <section class="project-section" id="projects">
+        <div class="projects-container">
+          <!-- High Card -->
+          <div class="project-wrapper">
+            <div class="project-card high">
+              <img src="public/assets/images/project4All.png" alt="Project 1" />
             </div>
-            </section>
-          
-            
-              
+            <div class="project-label sora-light">
+              <span class="featured">featured</span>
+              <span class="type">Web Development</span>
+            </div>
+          </div>
+      
+          <!-- Low Card -->
+          <div class="project-wrapper">
+            <div class="project-label above sora-light">
+              <span class="featured">featured</span>
+              <span class="type">Web Development</span>
+            </div>
+            <div class="project-card low">
+              <img src="public/assets/images/project4All.png" alt="Project 2" />
+            </div>
+          </div>
+      
+          <div class="project-wrapper">
+            <div class="project-card high">
+              <img src="public/assets/images/project4All.png" alt="Project 3" />
+            </div>
+            <div class="project-label sora-light">
+              <span class="featured">featured</span>
+              <span class="type">Web Development</span>
+            </div>
+          </div>
+      
+          <div class="project-wrapper">
+            <div class="project-label above sora-light">
+              <span class="featured">featured</span>
+              <span class="type">Web Development</span>
+            </div>
+            <div class="project-card low">
+              <img src="public/assets/images/project4All.png" alt="Project 4" />
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
 
-        </main>
+      <section class="contact-section">
+        <nav class="contact-navbar">
+          <div class="contact-displayname">
+            <p class="sora-light">Ricardo</p>
+            <p class="shrikhand-regular contact-displaynameTimm">Timm</p>
+          </div>
 
-        <script src="src/scripts/first-view.js"></script>
-        <script src="src/scripts/burger-menu.js"></script>
-        <script src="src/scripts/hero-section.js"></script>
-        <script src="src/scripts/contact-section.js"></script>
+          <ul class="contact-nav-elements sora-light">
+            <li><a href="#projects">projects</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#contact">contact</a></li>
+          </ul>
 
-    </body>
+          <div class="contact-burger-menu">
+            <div class="contact-line"></div>
+            <div class="contact-line"></div>
+          </div>
+          <div class="contact-dropdown-background"></div>
+        </nav>
 
+        <div class="contact-content">
+          <ul>
+            <li>
+              <div class="call-to-action">
+                <p class="sora-medium">Contact.</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                  fill="none"
+                >
+                  <path
+                    d="M16.5 7.5L6 18"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M8 6.18791C8 6.18791 16.0479 5.50949 17.2692 6.73079C18.4906 7.95209 17.812 16 17.812 16"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </li>
+            <li>
+              <div class="call-to-action">
+                <p class="sora-medium">Instagram.</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                  fill="none"
+                >
+                  <path
+                    d="M16.5 7.5L6 18"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M8 6.18791C8 6.18791 16.0479 5.50949 17.2692 6.73079C18.4906 7.95209 17.812 16 17.812 16"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </li>
+            <li>
+              <div class="call-to-action">
+                <p class="sora-medium">GitHub.</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                  fill="none"
+                >
+                  <path
+                    d="M16.5 7.5L6 18"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M8 6.18791C8 6.18791 16.0479 5.50949 17.2692 6.73079C18.4906 7.95209 17.812 16 17.812 16"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </li>
+            <li>
+              <div class="call-to-action">
+                <p class="sora-medium">LinkedIn.</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  height="24"
+                  fill="none"
+                >
+                  <path
+                    d="M16.5 7.5L6 18"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M8 6.18791C8 6.18791 16.0479 5.50949 17.2692 6.73079C18.4906 7.95209 17.812 16 17.812 16"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="contact-tagline">
+          <p>Let’s make your project real</p>
+          <hr />
+        </div>
+      </section>
+    </main>
+
+    <script src="src/scripts/first-view.js"></script>
+    <script src="src/scripts/burger-menu.js"></script>
+    <script src="src/scripts/hero-section.js"></script>
+    <script src="src/scripts/contact-section.js"></script>
+  </body>
 </html>
