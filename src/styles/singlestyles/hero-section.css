@@ -1,85 +1,205 @@
 /* hero-section */
 .hero-section {
-    margin-top: 150px;
-    margin-bottom: 100px;
+  margin-top: 150px;
+  margin-bottom: 100px;
+  position: relative;
+  
+  .hero-main-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     position: relative;
-  
-    .hero-main-text {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
+    /* Ensures that the content doesn't overlap */
+    
+    .hero-upper, .hero-lower {
       position: relative;
-      /* Ensures that the content doesn't overlap */
+      margin: 20px 0;
       
-      .hero-upper, .hero-lower {
-        position: relative;
-        margin: 20px 0;
-        
-        p {
-          font-size: var(--font-size-xs); /* Small text for 'I do' and 'And create' */
-          font-weight: var(--font-weight-regular);
-          color: var(--color-action-color);
-          position: absolute;
-          top: -2rem; /* Adjust the value to move it above the h1 */
-          left: 0;
-        }
-  
-        h1 {
-          font-size: var(--font-size-xl); /* Large text for 'Web Development' and 'UX-/UI Designs' */
-          color: var(--color-dark-blue);
-          margin: 0;
-        }
-      }
-
-      .hero-lower {
-        margin-left: 30%; /* Move the .hero-lower section to the right */
-
-        p {
-            margin-left: 10px;
-        };
-      }
-    }
-  
-    hr {
-      border: 1px solid var(--color-action-color);
-      width: 40%; /* Adjust to make it shorter */
-      margin: 2rem 0 0 30%; /* Shift the horizontal line to the right */
-    }
-  
-    p.sora-extraLight {
-      font-size: var(--font-size-xxxs);
-      color: var(--color-dark-blue);
-      margin-top: 1.5rem;
-      margin-left: 30%; /* Shift text below the line to the right */
-      max-width: 70%; /* Optional: limit the width for better readability */
-    }
-  
-    .call-to-action {
-      display: flex;
-      align-items: center;
-      margin-left: 30%;
-      margin-top: 1rem;
-      cursor: pointer;
-  
       p {
-        font-size: var(--font-size-xxxs); /* Adjust the size of the 'Want to work with me' text */
-        color: var(--color-action-color); /* Action color for the text */
-        margin-right: 1rem; /* Space between text and icon */
-        transition: color 0.3s ease-in-out;
-      }
-  
-      svg {
-        color: var(--color-action-color); /* Apply action color to SVG stroke */
-        width: 32px;
-        height: 32px;
-        transition: color 0.3s ease-in-out;
+        font-size: var(--font-size-xs); /* Small text for 'I do' and 'And create' */
+        font-weight: var(--font-weight-regular);
+        color: var(--color-action-color);
+        position: absolute;
+        top: -2rem; /* Adjust the value to move it above the h1 */
+        left: 0;
       }
 
-      &:hover {
-        p, svg {
-          color: var(--color-dark-blue); /* Change text and icon color on hover */
-        }
+      h1 {
+        font-size: var(--font-size-xl); /* Large text for 'Web Development' and 'UX-/UI Designs' */
+        color: var(--color-dark-blue);
+        margin: 0;
       }
     }
+
+    .hero-lower {
+      margin-left: 30%; /* Move the .hero-lower section to the right */
+
+      p {
+        margin-left: 10px;
+      }
+    }
+  }
+  
+  hr {
+    border: 1px solid var(--color-action-color);
+    width: 40%; /* Adjust to make it shorter */
+    margin: 2rem 0 0 30%; /* Shift the horizontal line to the right */
+  }
+  
+  p.sora-extraLight {
+    font-size: var(--font-size-xxxs);
+    color: var(--color-dark-blue);
+    margin-top: 1.5rem;
+    margin-left: 30%; /* Shift text below the line to the right */
+    max-width: 70%; /* Optional: limit the width for better readability */
+  }
+  
+  .call-to-action {
+    display: flex;
+    align-items: center;
+    margin-left: 30%;
+    margin-top: 1rem;
+    cursor: pointer;
+
+    p {
+      font-size: var(--font-size-xxxs); /* Adjust the size of the 'Want to work with me' text */
+      color: var(--color-action-color); /* Action color for the text */
+      margin-right: 1rem; /* Space between text and icon */
+      transition: color 0.3s ease-in-out;
+    }
+  
+    svg {
+      color: var(--color-action-color); /* Apply action color to SVG stroke */
+      width: 32px;
+      height: 32px;
+      transition: color 0.3s ease-in-out;
+    }
+
+    &:hover {
+      p, svg {
+        color: var(--color-dark-blue); /* Change text and icon color on hover */
+      }
+    }
+  }
 }
 
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .hero-section {
+    margin-top: 100px;
+    margin-bottom: 80px;
+  }
+
+  .hero-main-text .hero-lower {
+    margin-left: 15%; /* Slightly reduce the margin to keep alignment */
+  }
+
+  hr {
+    width: 50%;
+    margin-left: 25%;
+  }
+
+  p.sora-extraLight, .call-to-action {
+    margin-left: 25%;
+  }
+
+  p, h1 {
+    font-size: calc(var(--font-size-xs) * 0.9); /* Slightly adjust font size */
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-section {
+    margin-top: 80px;
+    margin-bottom: 60px;
+  }
+
+  .hero-main-text .hero-lower {
+    margin-left: 10%; /* Further reduce margin */
+  }
+
+  hr {
+    width: 60%;
+    margin-left: 20%;
+  }
+
+  p.sora-extraLight, .call-to-action {
+    margin-left: 20%;
+  }
+
+  p, h1 {
+    font-size: calc(var(--font-size-xs) * 0.8); /* Adjust font size */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    margin-top: 60px;
+    margin-bottom: 40px;
+  }
+
+  .hero-main-text .hero-lower {
+    margin-left: 0; /* Align lower section to center */
+  }
+
+  hr {
+    width: 70%;
+    margin-left: 15%;
+  }
+
+  p.sora-extraLight, .call-to-action {
+    margin-left: 15%;
+  }
+
+  p, h1 {
+    font-size: calc(var(--font-size-xs) * 0.7); /* Adjust font size */
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  .hero-main-text .hero-lower {
+    margin-left: 0; /* Align the lower section to center */
+  }
+
+  hr {
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  p.sora-extraLight, .call-to-action {
+    margin-left: 10%;
+  }
+
+  p, h1 {
+    font-size: calc(var(--font-size-xs) * 0.6); /* Adjust font size */
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-section {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .hero-main-text .hero-lower {
+    margin-left: 0; /* Align lower section to center */
+  }
+
+  hr {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  p.sora-extraLight, .call-to-action {
+    margin-left: 5%;
+  }
+
+  p, h1 {
+    font-size: calc(var(--font-size-xs) * 0.5); /* Adjust font size */
+  }
+}

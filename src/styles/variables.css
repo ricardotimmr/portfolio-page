@@ -36,4 +36,72 @@
 
 }
 
-/* You can add more variables here */
+@media (max-width: 1200px) {
+    :root {
+        --font-size-xxl: 136px;
+        --font-size-xl: 100px;
+        --font-size-lg: 80px;
+        --font-size-md: 40px;
+        --font-size-sm: 36px;
+        --font-size-xs: 32px;
+        --font-size-xxs: 24px;
+        --font-size-xxxs: 20px;
+        --font-size-xxxxs: 16px;
+    }
+}
+  
+@media (max-width: 992px) {
+    :root {
+        --font-size-xxl: 102px;
+        --font-size-xl: 75px;
+        --font-size-lg: 60px;
+        --font-size-md: 30px;
+        --font-size-sm: 27px;
+        --font-size-xs: 24px;
+        --font-size-xxs: 18px;
+        --font-size-xxxs: 15px;
+        --font-size-xxxxs: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --font-size-xxl: 85px;
+        --font-size-xl: 63px;
+        --font-size-lg: 50px;
+        --font-size-md: 25px;
+        --font-size-sm: 22px;
+        --font-size-xs: 20px;
+        --font-size-xxs: 15px;
+        --font-size-xxxs: 12px;
+        --font-size-xxxxs: 10px;
+    }
+}
+  
+@media (max-width: 576px) {
+    :root {
+        --font-size-xxl: 68px;
+        --font-size-xl: 50px;
+        --font-size-lg: 40px;
+        --font-size-md: 20px;
+        --font-size-sm: 18px;
+        --font-size-xs: 16px;
+        --font-size-xxs: 12px;
+        --font-size-xxxs: 10px;
+        --font-size-xxxxs: 8px;
+    }
+}
+
+@media (max-width: 400px) {
+    :root {
+        --font-size-xxl: 51px;
+        --font-size-xl: 38px;
+        --font-size-lg: 30px;
+        --font-size-md: 15px;
+        --font-size-sm: 14px;
+        --font-size-xs: 12px;
+        --font-size-xxs: 9px;
+        --font-size-xxxs: 8px;
+        --font-size-xxxxs: 6px;
+    }
+}
