@@ -1,41 +1,28 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const projectSection = document.querySelector(".project-section");
-    const projectsContainer = document.querySelector(".projects-container");
+// Ensure GSAP and ScrollTrigger are available
+gsap.registerPlugin(ScrollTrigger);
 
-    // Set starting position and scroll width dynamically on load and resize
-    function setScrollBoundaries() {
-        const sectionTop = projectSection.getBoundingClientRect().top + window.scrollY;
-        const sectionHeight = projectSection.clientHeight;
-        const horizontalScrollWidth = projectsContainer.scrollWidth - window.innerWidth;
+// Select the card elements and the container
+const cards = gsap.utils.toArray(".project-wrapper");
+const cardsContainer = document.querySelector(".projects-container");
 
-        return {
-            sectionTop,
-            scrollEnd: sectionTop + sectionHeight + horizontalScrollWidth
-        };
+gsap.to(cardsContainer, {
+  x: () => -(cardsContainer.scrollWidth - window.innerWidth + 180), // Adjust final offset for last card
+  ease: "power1.out",
+  scrollTrigger: {
+    trigger: ".project-section",
+    start: "top-=130 top",
+    end: () => `+=${cardsContainer.scrollWidth - window.innerWidth + cards[0].offsetWidth + 100}`, // Adjust end dynamically
+    pin: true,
+    scrub: 0.75,
+    markers: false, // for debugging, can be removed when done
+    invalidateOnRefresh: true,
+    onLeave: () => {
+      // Trigger the contact section animation when scrolling past the project section
+      window.dispatchEvent(new CustomEvent("projectSectionScrolled"));
+    },
+    onEnterBack: () => {
+      // Reverse the contact section animation when scrolling back to the project section
+      window.dispatchEvent(new CustomEvent("projectSectionReentered"));
     }
-
-    let { sectionTop, scrollEnd } = setScrollBoundaries();
-
-    // Recalculate boundaries on window resize
-    window.addEventListener("resize", () => {
-        ({ sectionTop, scrollEnd } = setScrollBoundaries());
-    });
-
-    window.addEventListener("scroll", () => {
-        const currentScroll = window.scrollY;
-
-        // Only scroll horizontally if within the project section scroll range
-        if (currentScroll >= sectionTop && currentScroll <= scrollEnd) {
-            projectSection.style.position = "sticky";
-            projectSection.style.top = "0";
-
-            // Map vertical scroll to horizontal scroll
-            const horizontalScroll = currentScroll - sectionTop;
-            projectsContainer.style.transform = `translateX(-${horizontalScroll}px)`;
-        } else {
-            // Reset to initial position when outside the section's range
-            projectSection.style.position = "relative";
-            projectsContainer.style.transform = "translateX(0)";
-        }
-    });
+  }
 });
