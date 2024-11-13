@@ -1,0 +1,30 @@
+/* Style for the sticky button */
+.toggle-button {
+    position: fixed;
+    bottom: 20px; /* Position the button at the bottom of the page */
+    right: 20px; /* Position the button on the right side */
+    background-color: var(--color-dark-blue);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    filter: none;
+    z-index: 9998;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for background-color and box-shadow */
+  }
+  
+  .toggle-button:hover {
+    background-color: var(--color-action-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Slightly change the shadow on hover for effect */
+  }
+  
+  /* Grayscale effect */
+.grayscale {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease; /* Smooth transition for grayscale effect */
+  }
