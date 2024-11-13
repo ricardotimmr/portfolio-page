@@ -7,8 +7,8 @@ const contactSection = document.querySelector(".contact-section");
 // ScrollTrigger for showing/hiding the contact section
 ScrollTrigger.create({
   trigger: ".project-section",
-  start: "bottom+=900 bottom", // Trigger 200px after scrolling past the bottom of .project-section
-  end: "bottom+=900 top",      // End when bottom of .project-section is 200px above the top of viewport
+  start: "bottom+=1400 bottom", // Trigger 200px after scrolling past the bottom of .project-section
+  end: "bottom+=1400 top",      // End when bottom of .project-section is 200px above the top of viewport
   toggleClass: {targets: contactSection, className: "visible"},
   onEnter: () => showContactSection(),
   onLeaveBack: () => hideContactSection(),
