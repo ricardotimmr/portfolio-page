@@ -1,0 +1,34 @@
+.keep-scrolling-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed; /* Use fixed positioning to ensure it stays on top of the viewport */
+    bottom: 5vh; /* Position it near the bottom of the screen */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100; /* Ensure it's above other elements */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+  
+.keep-scrolling-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-action-color); /* Adjust to match your color scheme */
+    text-align: center;
+    letter-spacing: 2px;
+    animation: fadeIn 1.5s ease-in-out infinite alternate;
+    opacity: 0;
+}
+  
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+}
